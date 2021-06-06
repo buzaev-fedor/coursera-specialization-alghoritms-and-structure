@@ -29,12 +29,10 @@ def get_optimal_value(capacity, weights, values):
         reverse=True
     )
     space_backpack = int(capacity)
-    print(weight_value_pairs)
     for item in weight_value_pairs:
         if space_backpack - item[1] >= 0:
             value += item[0]
             space_backpack -= item[1]
-            print(space_backpack)
         else:
             value += (item.value / item.weight) * space_backpack
             space_backpack = 0
